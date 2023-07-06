@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b244t8pbfdvog"]
+
+[ext_resource type="Texture2D" uid="uid://d1g354yorvfrc" path="res://assets/Background/back.jpg" id="1_dol8c"]
+
+[node name="Background" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1152, 648)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_dol8c")

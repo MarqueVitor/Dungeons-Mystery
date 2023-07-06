@@ -1,28 +1,43 @@
 extends CharacterBody2D
 
+# Guarda ref da textura 
+@onready var sprite: Sprite2D = get_node("Texture")
+@export var move_speed:float = 70
+@export var gravity_speed:float = 350
+var jump_count: int = 0
+var jump_speed: float = -160.0
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
-
-func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
-
-	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+# Chamada a cada frame de execução, contém a lógica do jogo
+func _physics_process(delta:float)->void:
+	move()
+	velocity.y += delta * gravity_speed
 	move_and_slide()
+	jump()
+	sprite.animate(velocity) # Chamada da função em texture
+
+func move()->void: # Função para movimentar o personagem
+	var direction:float = get_direction()
+	velocity.x = direction * move_speed
+	pass
+	
+func get_direction()->float: # Função para mover o personagem
+	return (
+		Input.get_axis("ui_left","ui_right") # Setas do teclado
+	)
+
+func jump() ->void: # Função que faz o personagem pular 
+	if is_on_floor(): # Verifica se o personagem está no chão
+		jump_count = 0
+	if Input.is_action_just_pressed("ui_select") and jump_count < 1:
+		velocity.y = jump_speed
+		jump_count +=1
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
