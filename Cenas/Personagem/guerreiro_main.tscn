@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dgiclxujglfd6"]
+[gd_scene load_steps=19 format=3 uid="uid://dgiclxujglfd6"]
 
 [ext_resource type="Texture2D" uid="uid://pswunx15odtn" path="res://assets/Guerreiro/_Idle.png" id="1_m30fa"]
 [ext_resource type="Script" path="res://Scripts/Player/guerreiro_main.gd" id="1_yjnqc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dg3rvu3nsokhr" path="res://assets/Guerreiro/_Attack.png" id="4_4gi4q"]
 [ext_resource type="Texture2D" uid="uid://coyeajd7auj6k" path="res://assets/Guerreiro/_Jump.png" id="6_hnp17"]
 [ext_resource type="Texture2D" uid="uid://ce26iv23bgdxc" path="res://assets/Guerreiro/_Fall.png" id="7_xr64u"]
+[ext_resource type="Texture2D" uid="uid://dplf8yulvjel5" path="res://Diversos/Luz.png" id="8_asfk6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_472yb"]
 size = Vector2(17, 44)
@@ -287,6 +288,12 @@ _data = {
 "Run": SubResource("Animation_1twkd")
 }
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jdydx"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_d5mcc"]
+polygon = PackedVector2Array(-512, -54, -588, -32, -618, 35, -598, 124, -508, 154, -425, 128, -396, 40, -426, -31)
+
 [node name="GuerreiroMain" type="CharacterBody2D"]
 position = Vector2(585, 7)
 script = ExtResource("1_yjnqc")
@@ -311,3 +318,25 @@ libraries = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-518, 49)
+
+[node name="Light" type="Node2D" parent="Camera2D"]
+visible = false
+
+[node name="PointLight2D2" type="PointLight2D" parent="Camera2D/Light"]
+visible = false
+energy = 0.5
+texture = ExtResource("8_asfk6")
+texture_scale = 2.0
+
+[node name="PointLight2D" type="PointLight2D" parent="Camera2D/Light"]
+visible = false
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("8_asfk6")
+texture_scale = 2.0
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
+material = SubResource("CanvasItemMaterial_jdydx")
+occluder = SubResource("OccluderPolygon2D_d5mcc")
