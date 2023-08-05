@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://46juemawdkss"]
+
+[ext_resource type="FontFile" uid="uid://d16k4uu0hqx4k" path="res://assets/monogram.ttf" id="1_qtkuy"]
+[ext_resource type="Script" path="res://Scripts/Management/interface.gd" id="1_wrejo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d3jyd"]
+font = ExtResource("1_qtkuy")
+font_size = 34
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.47451)
+
+[node name="Interface" type="CanvasLayer" groups=["interface"]]
+script = ExtResource("1_wrejo")
+
+[node name="Vida" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 94.0
+offset_bottom = 37.0
+text = "Vidas:4"
+label_settings = SubResource("LabelSettings_d3jyd")

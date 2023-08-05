@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://buuseq4yabfuc"]
+
+[ext_resource type="Script" path="res://Scripts/Management/portal.gd" id="1_acsa0"]
+[ext_resource type="Texture2D" uid="uid://c6fp60wlmokae" path="res://Diversos/gaiola.png" id="1_ufny0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5fqq"]
+size = Vector2(50, 59)
+
+[node name="Portal" type="Area2D"]
+script = ExtResource("1_acsa0")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(327, 110.5)
+shape = SubResource("RectangleShape2D_h5fqq")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(329, 112)
+texture = ExtResource("1_ufny0")
+region_enabled = true
+region_rect = Rect2(89.5, 82.5, 65, 70)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

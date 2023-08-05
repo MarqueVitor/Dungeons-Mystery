@@ -1,0 +1,151 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfkjapaxh2gar"]
+
+[ext_resource type="Script" path="res://Cenas/Management/start_screen.gd" id="1_oraam"]
+[ext_resource type="Texture2D" uid="uid://dbpfeqgs875g6" path="res://telamenu.jpg" id="2_glh5q"]
+[ext_resource type="Script" path="res://Cenas/Management/CanvasLayer.gd" id="2_mf4pv"]
+[ext_resource type="FontFile" uid="uid://d16k4uu0hqx4k" path="res://assets/monogram.ttf" id="2_ry2c1"]
+
+[node name="Menu" type="Node"]
+script = ExtResource("1_oraam")
+
+[node name="Backgroud" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_glh5q")
+expand_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+script = ExtResource("2_mf4pv")
+
+[node name="Controles" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Controles"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Controles/CenterContainer"]
+custom_minimum_size = Vector2(512, 256)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Controles/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Controles/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Controles/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_ry2c1")
+theme_override_font_sizes/font_size = 42
+text = "----Controles----"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/Controles/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_ry2c1")
+theme_override_font_sizes/font_size = 32
+text = "-> andar para direita 
+<- andar para esquerda
+C + -> atacar para direita
+D + <- atacar para esquerda
+↑ subir escada
+Espace bar pular
+
+"
+horizontal_alignment = 1
+
+[node name="ButtonBackMenu" type="Button" parent="CanvasLayer/Controles/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_ry2c1")
+theme_override_font_sizes/font_size = 32
+text = "Voltar"
+
+[node name="Main" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Main"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Main/CenterContainer"]
+custom_minimum_size = Vector2(512, 256)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Main/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_ry2c1")
+theme_override_font_sizes/font_size = 42
+text = "Dungeons Mystery"
+horizontal_alignment = 1
+
+[node name="ButtonPlay" type="Button" parent="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_ry2c1")
+theme_override_font_sizes/font_size = 32
+text = "Jogar"
+
+[node name="ButtonControl" type="Button" parent="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_ry2c1")
+theme_override_font_sizes/font_size = 32
+text = "Controles"
+
+[node name="ButtonQuit" type="Button" parent="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_ry2c1")
+theme_override_font_sizes/font_size = 32
+text = "Sair"
+
+[connection signal="pressed" from="CanvasLayer/Controles/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonBackMenu" to="CanvasLayer" method="_on_button_back_menu_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonPlay" to="CanvasLayer" method="_on_button_play_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonPlay" to="CanvasLayer" method="_on_button_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonControl" to="CanvasLayer" method="_on_button_control_pressed"]
+[connection signal="pressed" from="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonQuit" to="CanvasLayer" method="_on_button_quit_pressed"]

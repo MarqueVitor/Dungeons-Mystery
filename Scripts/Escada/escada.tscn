@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbmfm6v0vye2t"]
+
+[ext_resource type="Script" path="res://Scripts/Escada/Escada.gd" id="1_xocia"]
+[ext_resource type="Texture2D" uid="uid://7vwsk53q1iea" path="res://assets/Menu/Muros-2/2.png" id="2_gdcfi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ib1vi"]
+size = Vector2(14, 80.25)
+
+[node name="escada" type="Area2D" groups=["ladder"]]
+script = ExtResource("1_xocia")
+
+[node name="ColisaoEscada" type="CollisionShape2D" parent="."]
+position = Vector2(302, 114)
+shape = SubResource("RectangleShape2D_ib1vi")
+
+[node name="2" type="Sprite2D" parent="."]
+position = Vector2(302, 108)
+scale = Vector2(1, 0.765627)
+texture = ExtResource("2_gdcfi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
