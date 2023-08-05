@@ -13,7 +13,7 @@ enum {
 }
 
 @export var health: int = 2
-@export var life = 4
+@export var life = 5
 var state = WALK
 const SPEED = 70.0
 var is_moving_left = true
