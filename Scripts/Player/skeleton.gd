@@ -79,6 +79,7 @@ func flip()->void:
 #Atualiza a vida do inimigo
 func update_life(dano:int)->void:
 	if life != 0:
+		$takeHit.play()
 		life -= dano
 		health_bar.value=life
 	if life == 0:

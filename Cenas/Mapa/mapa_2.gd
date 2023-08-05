@@ -6,6 +6,7 @@ extends Node2D
 
 # Função para chamar as transições de tela 
 func _ready() ->void:
+	$Battle.play()
 	interface.update_health(player.max_health) # Carrega na interface com a vida atual
 	transition_screen.target_path=scene_path
 	transition_screen.connect(

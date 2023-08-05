@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dq4d3haegsa6b"]
+[gd_scene load_steps=20 format=3 uid="uid://dq4d3haegsa6b"]
 
 [ext_resource type="Texture2D" uid="uid://bs1t7bw0c3ovd" path="res://assets/Menu/Muros/Png Files/sandbrick_grass_alt_tileset_1.png" id="1_3md60"]
 [ext_resource type="Script" path="res://Cenas/Mapa/mapa_2.gd" id="1_imahh"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b54o3bh2eqsyn" path="res://Cenas/Personagem/skeleton.tscn" id="10_5fhti"]
 [ext_resource type="PackedScene" uid="uid://cb7dwec0fullh" path="res://Cenas/Personagem/boss.tscn" id="11_qf4dt"]
 [ext_resource type="PackedScene" uid="uid://c6jokw0ld6fvp" path="res://Cenas/Management/fim_jogo.tscn" id="12_rjprg"]
+[ext_resource type="AudioStream" uid="uid://dse11qp0j835m" path="res://sounds/xDeviruchi - Prepare for Battle! .wav" id="13_q6owj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jnxro"]
 texture = ExtResource("1_3md60")
@@ -895,3 +896,7 @@ position = Vector2(701, 148.796)
 
 [node name="FimJogo" parent="." instance=ExtResource("12_rjprg")]
 position = Vector2(51, -33.1774)
+
+[node name="Battle" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_q6owj")
+volume_db = -10.0

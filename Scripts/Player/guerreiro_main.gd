@@ -49,6 +49,7 @@ func jump() ->void: # Função que faz o personagem pular
 	if is_on_floor(): # Verifica se o personagem está no chão
 		jump_count = 0
 	if Input.is_action_just_pressed("ui_select") and jump_count < 1:
+		$Jump.play()
 		velocity.y = jump_speed
 		jump_count +=1
 
@@ -59,6 +60,7 @@ func update_health(_target_position:Vector2,value:int,type:String) -> void:
 		
 	if type == "decrease": # Diminuir a vida
 		knockback_direction = (global_position - _target_position).normalized()
+		$takeHit.play()
 		sprite.action_behavior("Hit")
 		#on_knockback = true
 		print("Recebeu " + str(value) + " de dano")
@@ -75,6 +77,7 @@ func update_health(_target_position:Vector2,value:int,type:String) -> void:
 	if type == "increase": #Aumentar a vida
 		health = clamp(health+value,0,max_health)
 		transition_screen.current_life=health
+		$LifeSound.play()
 		sprite.action_behavior("UpHealth")
 		get_tree().call_group("interface","update_health",health)
 		healthbar.value=health
@@ -102,8 +105,10 @@ func climber()->void:
 func _attack()->void:
 	if Input.is_action_just_pressed("attack"):
 		sprite.action_behavior("Attack")
+		$Sword.play()
 	if Input.is_action_just_pressed("attack_2"):
 		sprite.action_behavior("Attack_2")
+		$Sword.play()
 		
 #Função para dar dano ao inimigo
 func _on_attack_area_body_entered(body):

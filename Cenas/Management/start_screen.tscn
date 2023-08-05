@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfkjapaxh2gar"]
+[gd_scene load_steps=6 format=3 uid="uid://dfkjapaxh2gar"]
 
 [ext_resource type="Script" path="res://Cenas/Management/start_screen.gd" id="1_oraam"]
 [ext_resource type="Texture2D" uid="uid://dbpfeqgs875g6" path="res://telamenu.jpg" id="2_glh5q"]
 [ext_resource type="Script" path="res://Cenas/Management/CanvasLayer.gd" id="2_mf4pv"]
 [ext_resource type="FontFile" uid="uid://d16k4uu0hqx4k" path="res://assets/monogram.ttf" id="2_ry2c1"]
+[ext_resource type="AudioStream" uid="uid://foget11cct7b" path="res://sounds/xDeviruchi - Title Theme .wav" id="5_3w0jw"]
 
 [node name="Menu" type="Node"]
 script = ExtResource("1_oraam")
@@ -142,6 +143,9 @@ size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_ry2c1")
 theme_override_font_sizes/font_size = 32
 text = "Sair"
+
+[node name="TitleTheme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_3w0jw")
 
 [connection signal="pressed" from="CanvasLayer/Controles/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonBackMenu" to="CanvasLayer" method="_on_button_back_menu_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonPlay" to="CanvasLayer" method="_on_button_play_mouse_entered"]

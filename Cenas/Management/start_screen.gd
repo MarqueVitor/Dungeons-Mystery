@@ -1,6 +1,4 @@
 extends Node
 
-
-
-func _on_button_pressed():
-	print("VAGABUNDO")
+func _ready():
+	$TitleTheme.play()

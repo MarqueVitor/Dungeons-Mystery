@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b54o3bh2eqsyn"]
+[gd_scene load_steps=17 format=3 uid="uid://b54o3bh2eqsyn"]
 
 [ext_resource type="Texture2D" uid="uid://bfroes4soln10" path="res://assets/Skeleton/Walk.png" id="1_d5ekp"]
 [ext_resource type="Script" path="res://Scripts/Player/skeleton.gd" id="1_jrvia"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bj2iave4xvkch" path="res://assets/Skeleton/Death.png" id="3_qch3i"]
 [ext_resource type="Texture2D" uid="uid://c8bmobwgxu5a8" path="res://assets/Skeleton/Attack.png" id="4_15yi0"]
 [ext_resource type="Texture2D" uid="uid://cl3dke2klwd2l" path="res://assets/Skeleton/Take Hit.png" id="5_srbf7"]
+[ext_resource type="AudioStream" uid="uid://c8nef28bhqhr5" path="res://sounds/skullHit.wav" id="7_m7pfj"]
 
 [sub_resource type="Animation" id="Animation_ydwaj"]
 resource_name = "Attack"
@@ -330,6 +331,9 @@ scale = Vector2(0.3, 0.3)
 max_value = 2.0
 value = 2.0
 show_percentage = false
+
+[node name="takeHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_m7pfj")
 
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]

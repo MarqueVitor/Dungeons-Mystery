@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dgiclxujglfd6"]
+[gd_scene load_steps=35 format=3 uid="uid://dgiclxujglfd6"]
 
 [ext_resource type="Script" path="res://Scripts/Player/guerreiro_main.gd" id="1_yjnqc"]
 [ext_resource type="Texture2D" uid="uid://msvpclcyfgg3" path="res://assets/Guerreiro/Idle.png" id="2_3ikeu"]
@@ -12,6 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://bv8j28j0s6der" path="res://assets/Guerreiro/Deaths.png" id="8_knf1m"]
 [ext_resource type="Texture2D" uid="uid://daj70akkpq5d" path="res://assets/Guerreiro/Health.png" id="9_4nn7r"]
 [ext_resource type="Texture2D" uid="uid://clnu43wchb3ms" path="res://assets/Guerreiro/PrayTeste.png" id="10_s3kcu"]
+[ext_resource type="AudioStream" uid="uid://bfxneg0ohclok" path="res://sounds/SFX_Swing_Sword_01.wav" id="13_2w5di"]
+[ext_resource type="AudioStream" uid="uid://clsmyx7aems88" path="res://sounds/SFX_Potion_01.wav" id="14_kxrm3"]
+[ext_resource type="AudioStream" uid="uid://c5o6nwbxymnaj" path="res://sounds/jumping.wav" id="15_735hh"]
+[ext_resource type="AudioStream" uid="uid://c8g5nmps02weh" path="res://sounds/takeHit.wav" id="16_6lfgb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u1el4"]
 size = Vector2(24, 50)
@@ -733,6 +737,18 @@ offset_bottom = 109.0
 max_value = 3.0
 value = 3.0
 show_percentage = false
+
+[node name="Sword" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_2w5di")
+
+[node name="LifeSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_kxrm3")
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_735hh")
+
+[node name="takeHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_6lfgb")
 
 [connection signal="animation_finished" from="Animation" to="Texture" method="_on_animation_animation_finished"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]

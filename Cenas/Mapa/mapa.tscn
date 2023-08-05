@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dyeiigd5mcann"]
+[gd_scene load_steps=30 format=3 uid="uid://dyeiigd5mcann"]
 
 [ext_resource type="PackedScene" uid="uid://dgiclxujglfd6" path="res://Cenas/Personagem/guerreiro_main.tscn" id="1_ivs68"]
 [ext_resource type="Texture2D" uid="uid://bs1t7bw0c3ovd" path="res://assets/Menu/Muros/Png Files/sandbrick_grass_alt_tileset_1.png" id="1_jn4wl"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://buuseq4yabfuc" path="res://Cenas/Management/portal.tscn" id="20_swdw3"]
 [ext_resource type="PackedScene" uid="uid://46juemawdkss" path="res://Scripts/Management/interface.tscn" id="21_n3dts"]
 [ext_resource type="PackedScene" uid="uid://b54o3bh2eqsyn" path="res://Cenas/Personagem/skeleton.tscn" id="22_e3clb"]
+[ext_resource type="AudioStream" uid="uid://ca5kds00f6v0l" path="res://sounds/xDeviruchi - And The Journey Begins .wav" id="23_e32dt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jnxro"]
 texture = ExtResource("1_jn4wl")
@@ -896,7 +897,8 @@ position = Vector2(734, -106)
 position = Vector2(627, 24)
 
 [node name="GuerreiroMain" parent="." instance=ExtResource("1_ivs68")]
-position = Vector2(421, -95)
+position = Vector2(437, -97)
+scale = Vector2(1, 1.01723)
 
 [node name="Portal" parent="." instance=ExtResource("20_swdw3")]
 position = Vector2(-352, -276)
@@ -919,10 +921,10 @@ position = Vector2(115, 98)
 position = Vector2(598, 225)
 
 [node name="Fogo5" parent="Armadilha" instance=ExtResource("8_3qddr")]
-position = Vector2(636, 225)
+position = Vector2(630, 224)
 
 [node name="Fogo6" parent="Armadilha" instance=ExtResource("8_3qddr")]
-position = Vector2(675, 225)
+position = Vector2(694, 225)
 
 [node name="Fogo10" parent="Armadilha" instance=ExtResource("8_3qddr")]
 position = Vector2(778, 242)
@@ -935,6 +937,12 @@ position = Vector2(760, 98)
 
 [node name="Fogo13" parent="Armadilha" instance=ExtResource("8_3qddr")]
 position = Vector2(783, 98)
+
+[node name="Fogo7" parent="Armadilha" instance=ExtResource("8_3qddr")]
+position = Vector2(664, 225)
+
+[node name="Fogo8" parent="Armadilha" instance=ExtResource("8_3qddr")]
+position = Vector2(723, 225)
 
 [node name="Objeto" type="Sprite2D" parent="."]
 position = Vector2(-67, 54)
@@ -1197,4 +1205,8 @@ position = Vector2(651, -18)
 position = Vector2(817, -19)
 
 [node name="vida2" parent="." instance=ExtResource("20_51s2a")]
-position = Vector2(720, 237)
+position = Vector2(753, 236)
+
+[node name="Journey" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_e32dt")
+volume_db = -10.0
