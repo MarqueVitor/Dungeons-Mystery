@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6jokw0ld6fvp"]
+[gd_scene load_steps=5 format=3 uid="uid://c6jokw0ld6fvp"]
 
 [ext_resource type="Script" path="res://Cenas/Mapa/FimJogo.gd" id="1_lucnu"]
 [ext_resource type="Texture2D" uid="uid://c6fp60wlmokae" path="res://Diversos/gaiola.png" id="2_ma6kk"]
+[ext_resource type="AudioStream" uid="uid://clkjwhf7mahkm" path="res://sounds/door.wav" id="3_us31h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8fpt1"]
 size = Vector2(90, 76)
@@ -20,5 +21,8 @@ region_rect = Rect2(113.766, 20.7724, 68.3696, 51.8407)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(775, 241)
 shape = SubResource("RectangleShape2D_8fpt1")
+
+[node name="door" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_us31h")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -5,5 +5,6 @@ extends Area2D
 func _on_body_entered(body):
 	if body.is_in_group("guerreiro_main"):
 		transition_screen.target_path=scene_path
+		$door.play()
 		body.sprite.action_behavior("Pray")
 		body.set_physics_process(false)

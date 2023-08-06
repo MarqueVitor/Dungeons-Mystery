@@ -11,6 +11,7 @@ func fade_in() ->void:
 
 func _on_animation_finished(anim_name:String) ->void:
 	if anim_name == "fade_in":
+		
 		var _change_scene:bool = get_tree().change_scene_to_file(target_path)
 		animation.play("fade_out")
 	

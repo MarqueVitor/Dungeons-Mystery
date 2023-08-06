@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cb7dwec0fullh"]
+[gd_scene load_steps=11 format=3 uid="uid://cb7dwec0fullh"]
 
 [ext_resource type="Texture2D" uid="uid://bjyygvbvoyd2y" path="res://assets/cultista-chefe/main.png" id="1_h0ay4"]
 [ext_resource type="Script" path="res://Cenas/Personagem/boss.gd" id="1_y7qlr"]
+[ext_resource type="AudioStream" uid="uid://ci771nghyg5kr" path="res://sounds/mixkit-air-whistle-punch-2048.wav" id="3_an1hd"]
 
 [sub_resource type="Animation" id="Animation_1px0c"]
 resource_name = "Attack"
@@ -218,6 +219,9 @@ show_percentage = false
 [node name="Collision" type="CollisionShape2D" parent="Detection"]
 position = Vector2(-30, -88)
 shape = SubResource("RectangleShape2D_g6sj1")
+
+[node name="boss_hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_an1hd")
 
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
