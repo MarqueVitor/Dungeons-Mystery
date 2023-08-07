@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Cenas/Mapa/FimJogo.gd" id="1_lucnu"]
 [ext_resource type="Texture2D" uid="uid://c6fp60wlmokae" path="res://Diversos/gaiola.png" id="2_ma6kk"]
-[ext_resource type="AudioStream" uid="uid://clkjwhf7mahkm" path="res://sounds/door.wav" id="3_us31h"]
+[ext_resource type="AudioStream" uid="uid://cc4okuhd2b7ht" path="res://sounds/Doflamingo_s-Laugh.wav" id="3_udp1q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8fpt1"]
 size = Vector2(90, 76)
@@ -23,6 +23,7 @@ position = Vector2(775, 241)
 shape = SubResource("RectangleShape2D_8fpt1")
 
 [node name="door" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_us31h")
+stream = ExtResource("3_udp1q")
+volume_db = 5.127
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
