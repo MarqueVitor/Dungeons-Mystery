@@ -901,7 +901,7 @@ position = Vector2(437, -97)
 scale = Vector2(1, 1.01723)
 
 [node name="Portal" parent="." instance=ExtResource("20_swdw3")]
-position = Vector2(-352, -276)
+position = Vector2(-352, -272)
 scene_path = "res://Cenas/Mapa/mapa_2.tscn"
 
 [node name="Background" parent="." instance=ExtResource("6_kwun7")]

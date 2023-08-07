@@ -5,18 +5,19 @@
 [ext_resource type="AudioStream" uid="uid://clkjwhf7mahkm" path="res://sounds/door.wav" id="3_rk5ps"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5fqq"]
-size = Vector2(50, 59)
+size = Vector2(50, 80)
 
 [node name="Portal" type="Area2D"]
 script = ExtResource("1_acsa0")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(327, 110.5)
+position = Vector2(327, 100)
 shape = SubResource("RectangleShape2D_h5fqq")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(329, 112)
+position = Vector2(329, 100.5)
+scale = Vector2(1, 1.32857)
 texture = ExtResource("1_ufny0")
 region_enabled = true
 region_rect = Rect2(89.5, 82.5, 65, 70)
