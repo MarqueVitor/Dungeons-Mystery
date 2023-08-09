@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://503xdf2fsy61"]
+
+[ext_resource type="Script" path="res://Scripts/Fogo/spike_teto.gd" id="1_dh776"]
+[ext_resource type="Texture2D" uid="uid://dsuuig0o2ifc8" path="res://Diversos/Coisas.png" id="1_gjoqi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gf0g8"]
+size = Vector2(13, 12)
+
+[node name="spike_teto" type="Area2D"]
+position = Vector2(35, 24)
+script = ExtResource("1_dh776")
+
+[node name="Texture" type="Sprite2D" parent="."]
+texture = ExtResource("1_gjoqi")
+region_enabled = true
+region_rect = Rect2(143.534, 160.273, 17.3318, 14.5522)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_gf0g8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

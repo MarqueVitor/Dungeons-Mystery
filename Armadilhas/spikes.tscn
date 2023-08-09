@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl8pn2d04qfvs"]
+
+[ext_resource type="Script" path="res://Scripts/Fogo/spikes.gd" id="1_2fg3x"]
+[ext_resource type="Texture2D" uid="uid://cnexo6dflqod6" path="res://Diversos/Dungeon Tile Set.png" id="1_85a0h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubuq3"]
+size = Vector2(26, 5)
+
+[node name="spikes" type="Area2D"]
+script = ExtResource("1_2fg3x")
+
+[node name="texture" type="Sprite2D" parent="."]
+position = Vector2(69, 30)
+scale = Vector2(1.42857, 1)
+texture = ExtResource("1_85a0h")
+region_enabled = true
+region_rect = Rect2(57.4576, 230.242, 18.2426, 9.86453)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(69, 33)
+shape = SubResource("RectangleShape2D_ubuq3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

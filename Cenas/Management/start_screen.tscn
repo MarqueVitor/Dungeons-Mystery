@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dfkjapaxh2gar"]
 
 [ext_resource type="Script" path="res://Cenas/Management/start_screen.gd" id="1_oraam"]
-[ext_resource type="Texture2D" uid="uid://dbpfeqgs875g6" path="res://telamenu.jpg" id="2_glh5q"]
+[ext_resource type="Texture2D" uid="uid://ckadiudcur1al" path="res://tela2.jpg" id="2_36p1g"]
 [ext_resource type="Script" path="res://Cenas/Management/CanvasLayer.gd" id="2_mf4pv"]
 [ext_resource type="FontFile" uid="uid://d16k4uu0hqx4k" path="res://assets/monogram.ttf" id="2_ry2c1"]
 [ext_resource type="AudioStream" uid="uid://foget11cct7b" path="res://sounds/xDeviruchi - Title Theme .wav" id="5_3w0jw"]
@@ -15,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_glh5q")
+texture = ExtResource("2_36p1g")
 expand_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

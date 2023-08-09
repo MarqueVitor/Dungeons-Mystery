@@ -202,7 +202,7 @@ position = Vector2(-31.25, -84)
 shape = SubResource("RectangleShape2D_6ru3e")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(-31, -58)
+position = Vector2(-30, -61)
 target_position = Vector2(0, 14)
 
 [node name="healthbat" type="ProgressBar" parent="."]
